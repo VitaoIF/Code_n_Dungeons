@@ -20,15 +20,12 @@ public class Player {
     public Player() {
     }
 
-    public Player(String nomePersonagem, String classe, Integer nivel, String raca, String nomeJogador) {
+    public Player(String nomePersonagem, String classe, Integer nivel, String raca, String nomeJogador, Integer forca, Integer destreza, Integer constituicao, Integer inteligencia, Integer sabedoria, Integer carisma) {
         this.nomePersonagem = nomePersonagem;
         this.classe = classe;
         this.nivel = nivel;
         this.raca = raca;
         this.nomeJogador = nomeJogador;
-    }
-
-    public Player(Integer forca, Integer destreza, Integer constituicao, Integer inteligencia, Integer sabedoria, Integer carisma) {
         this.forca = forca;
         this.destreza = destreza;
         this.constituicao = constituicao;
@@ -39,12 +36,19 @@ public class Player {
 
     @Override
     public String toString(){
-        return "-= INFORMAÇÕES DO CABEÇALHO =- \n"
+        return "\n-= INFORMAÇÕES DO CABEÇALHO =- \n"
                 + "Nome Personagem: " + this.nomePersonagem + "\n"
                 + "Classe: " + this.classe + "\n"
                 + "Nivel: " + this.nivel + "\n"
                 + "Raça: " + this.raca + "\n"
-                + "Nome Jogador: " + this.nomeJogador + "\n";
+                + "Nome Jogador: " + this.nomeJogador + "\n"
+                +"\n-= INFORMAÇÕES DOS ATRIBUTOS =- \n"
+                + "Força: "+ this.forca + "\n"
+                + "Destreza: " + this.destreza + "\n"
+                + "Constituição: " + this.constituicao + "\n"
+                + "Inteligência: " + this.inteligencia + "\n"
+                + "Sabedoria: " + this.sabedoria + "\n"
+                + "Carisma: " + this.carisma;
     }
 
     public Integer getCarisma() {
