@@ -37,6 +37,16 @@ public class Player {
         this.carisma = carisma;
     }
 
+    @Override
+    public String toString(){
+        return "-= INFORMAÇÕES DO CABEÇALHO =- \n"
+                + "Nome Personagem: " + this.nomePersonagem + "\n"
+                + "Classe: " + this.classe + "\n"
+                + "Nivel: " + this.nivel + "\n"
+                + "Raça: " + this.raca + "\n"
+                + "Nome Jogador: " + this.nomeJogador + "\n";
+    }
+
     public Integer getCarisma() {
         return carisma;
     }
