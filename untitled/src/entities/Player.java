@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.Random;
+
 public class Player extends Personagem{
 
     private String nomeJogador;
@@ -27,5 +29,10 @@ public class Player extends Personagem{
                 + "Inteligência: " + getInteligencia() + "\n"
                 + "Sabedoria: " + getSabedoria() + "\n"
                 + "Carisma: " + getCarisma();
+    }
+
+    @Override
+    public int atacar() {
+        return new Random().nextInt(20) + 1 + calcularModificador(this.getForca());
     }
 }
