@@ -4,25 +4,28 @@ public class Player extends Personagem{
 
     private String nomeJogador;
 
-
     public Player() {
     }
 
+    public Player(Integer carisma, String classe, Integer constituicao, Integer destreza, Integer forca, Integer inteligencia, Integer nivel, String nomePersonagem, String raca, Integer sabedoria, String nomeJogador) {
+        super(carisma, classe, constituicao, destreza, forca, inteligencia, nivel, nomePersonagem, raca, sabedoria);
+        this.nomeJogador = nomeJogador;
+    }
 
     @Override
     public String toString(){
         return "\n-= INFORMAÇÕES DO CABEÇALHO =- \n"
-                + "Nome Personagem: " + this.nomePersonagem + "\n"
-                + "Classe: " + this.classe + "\n"
-                + "Nivel: " + this.nivel + "\n"
-                + "Raça: " + this.raca + "\n"
+                + "Nome Personagem: " + getNomePersonagem() + "\n"
+                + "Classe: " + getClasse() + "\n"
+                + "Nivel: " + getNivel() + "\n"
+                + "Raça: " + getRaca() + "\n"
                 + "Nome Jogador: " + this.nomeJogador + "\n"
                 +"\n-= INFORMAÇÕES DOS ATRIBUTOS =- \n"
-                + "Força: "+ this.forca + "\n"
-                + "Destreza: " + this.destreza + "\n"
-                + "Constituição: " + this.constituicao + "\n"
-                + "Inteligência: " + this.inteligencia + "\n"
-                + "Sabedoria: " + this.sabedoria + "\n"
-                + "Carisma: " + this.carisma;
+                + "Força: "+ getForca() + "\n"
+                + "Destreza: " + getDestreza() + "\n"
+                + "Constituição: " + getConstituicao() + "\n"
+                + "Inteligência: " + getInteligencia() + "\n"
+                + "Sabedoria: " + getSabedoria() + "\n"
+                + "Carisma: " + getCarisma();
     }
 }
