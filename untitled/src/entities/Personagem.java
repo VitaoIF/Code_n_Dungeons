@@ -1,32 +1,28 @@
 package entities;
 
+
+import java.util.Random;
+
 public abstract class Personagem {
     // Cabeçalho da criação de personagens
     private String nomePersonagem;
     private String classe;
-    private Integer nivel;
+    private int nivel;
     private String raca;
 
     // Habilidades do personagem
-    private Integer forca;
-    private Integer destreza;
-    private Integer constituicao;
-    private Integer inteligencia;
-    private Integer sabedoria;
-    private Integer carisma;
+    private int forca, destreza,constituicao, inteligencia, sabedoria, carisma;
 
-    // Modificador de habilidades
-    private Integer modificadorForca;
-    private Integer modificadorDestreza;
-    private Integer modificadorConstituicao;
-    private Integer modificadorInteligencia;
-    private Integer modificadorSabedoria;
-    private Integer modificadorCarisma;
+    protected Random random = new Random();
+
+    public int calcularModificador(int atributo){
+        return  (atributo - 10) / 2;
+    }
 
     public Personagem() {
     }
 
-    public Personagem(Integer carisma, String classe, Integer constituicao, Integer destreza, Integer forca, Integer inteligencia, Integer nivel, String nomePersonagem, String raca, Integer sabedoria) {
+    public Personagem(int carisma, String classe, int constituicao, int destreza, int forca, int inteligencia, int nivel, String nomePersonagem, String raca, int sabedoria) {
         this.carisma = carisma;
         this.classe = classe;
         this.constituicao = constituicao;
@@ -39,11 +35,17 @@ public abstract class Personagem {
         this.sabedoria = sabedoria;
     }
 
-    public Integer getCarisma() {
+    public int rolarD20(){
+        return random.nextInt(20) + 1;
+    }
+
+    public abstract int atacar();
+
+    public int getCarisma() {
         return carisma;
     }
 
-    public void setCarisma(Integer carisma) {
+    public void setCarisma(int carisma) {
         this.carisma = carisma;
     }
 
@@ -55,91 +57,43 @@ public abstract class Personagem {
         this.classe = classe;
     }
 
-    public Integer getConstituicao() {
+    public int getConstituicao() {
         return constituicao;
     }
 
-    public void setConstituicao(Integer constituicao) {
+    public void setConstituicao(int constituicao) {
         this.constituicao = constituicao;
     }
 
-    public Integer getDestreza() {
+    public int getDestreza() {
         return destreza;
     }
 
-    public void setDestreza(Integer destreza) {
+    public void setDestreza(int destreza) {
         this.destreza = destreza;
     }
 
-    public Integer getForca() {
+    public int getForca() {
         return forca;
     }
 
-    public void setForca(Integer forca) {
+    public void setForca(int forca) {
         this.forca = forca;
     }
 
-    public Integer getInteligencia() {
+    public int getInteligencia() {
         return inteligencia;
     }
 
-    public void setInteligencia(Integer inteligencia) {
+    public void setInteligencia(int inteligencia) {
         this.inteligencia = inteligencia;
     }
 
-    public Integer getModificadorCarisma() {
-        return modificadorCarisma;
-    }
-
-    public void setModificadorCarisma(Integer modificadorCarisma) {
-        this.modificadorCarisma = modificadorCarisma;
-    }
-
-    public Integer getModificadorConstituicao() {
-        return modificadorConstituicao;
-    }
-
-    public void setModificadorConstituicao(Integer modificadorConstituicao) {
-        this.modificadorConstituicao = modificadorConstituicao;
-    }
-
-    public Integer getModificadorDestreza() {
-        return modificadorDestreza;
-    }
-
-    public void setModificadorDestreza(Integer modificadorDestreza) {
-        this.modificadorDestreza = modificadorDestreza;
-    }
-
-    public Integer getModificadorForca() {
-        return modificadorForca;
-    }
-
-    public void setModificadorForca(Integer modificadorForca) {
-        this.modificadorForca = modificadorForca;
-    }
-
-    public Integer getModificadorInteligencia() {
-        return modificadorInteligencia;
-    }
-
-    public void setModificadorInteligencia(Integer modificadorInteligencia) {
-        this.modificadorInteligencia = modificadorInteligencia;
-    }
-
-    public Integer getModificadorSabedoria() {
-        return modificadorSabedoria;
-    }
-
-    public void setModificadorSabedoria(Integer modificadorSabedoria) {
-        this.modificadorSabedoria = modificadorSabedoria;
-    }
-
-    public Integer getNivel() {
+    public int getNivel() {
         return nivel;
     }
 
-    public void setNivel(Integer nivel) {
+    public void setNivel(int nivel) {
         this.nivel = nivel;
     }
 
@@ -159,16 +113,12 @@ public abstract class Personagem {
         this.raca = raca;
     }
 
-    public Integer getSabedoria() {
+    public int getSabedoria() {
         return sabedoria;
     }
 
-    public void setSabedoria(Integer sabedoria) {
+    public void setSabedoria(int sabedoria) {
         this.sabedoria = sabedoria;
-    }
-
-    public int modificador(int atributo){
-        return  (atributo - 10) / 2;
     }
 
 }
