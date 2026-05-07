@@ -6,7 +6,7 @@ import java.util.Random;
 public abstract class Personagem {
     // Cabeçalho da criação de personagens
     private String nomePersonagem;
-    private String classe;
+    private Classe classe;
     private int nivel;
     private String raca;
 
@@ -22,7 +22,7 @@ public abstract class Personagem {
     public Personagem() {
     }
 
-    public Personagem(int carisma, String classe, int constituicao, int destreza, int forca, int inteligencia, int nivel, String nomePersonagem, String raca, int sabedoria) {
+    public Personagem(int carisma, Classe classe, int constituicao, int destreza, int forca, int inteligencia, int nivel, String nomePersonagem, String raca, int sabedoria) {
         this.carisma = carisma;
         this.classe = classe;
         this.constituicao = constituicao;
@@ -49,11 +49,11 @@ public abstract class Personagem {
         this.carisma = carisma;
     }
 
-    public String getClasse() {
+    public Classe getClasse() {
         return classe;
     }
 
-    public void setClasse(String classe) {
+    public void setClasse(Classe classe) {
         this.classe = classe;
     }
 

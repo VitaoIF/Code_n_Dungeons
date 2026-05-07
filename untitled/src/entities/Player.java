@@ -9,7 +9,7 @@ public class Player extends Personagem{
     public Player() {
     }
 
-    public Player(Integer carisma, String classe, Integer constituicao, Integer destreza, Integer forca, Integer inteligencia, Integer nivel, String nomePersonagem, String raca, Integer sabedoria, String nomeJogador) {
+    public Player(Integer carisma, Classe classe, Integer constituicao, Integer destreza, Integer forca, Integer inteligencia, Integer nivel, String nomePersonagem, String raca, Integer sabedoria, String nomeJogador) {
         super(carisma, classe, constituicao, destreza, forca, inteligencia, nivel, nomePersonagem, raca, sabedoria);
         this.nomeJogador = nomeJogador;
     }
