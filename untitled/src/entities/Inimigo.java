@@ -7,7 +7,7 @@ public class Inimigo extends Personagem{
     public Inimigo() {
     }
 
-    public Inimigo(Integer carisma, String classe, Integer constituicao, Integer destreza, Integer forca, Integer inteligencia, Integer nivel, String nomePersonagem, String raca, Integer sabedoria) {
+    public Inimigo(Integer carisma, Classe classe, Integer constituicao, Integer destreza, Integer forca, Integer inteligencia, Integer nivel, String nomePersonagem, String raca, Integer sabedoria) {
         super(carisma, classe, constituicao, destreza, forca, inteligencia, nivel, nomePersonagem, raca, sabedoria);
     }
 
