@@ -10,4 +10,9 @@ public class Ladino extends Classe {
     public int calcularAtaque(Personagem p){
         return p.rolarD20() + p.calcularModificador(p.getDestreza());
     }
+
+    @Override
+    public String toString(){
+        return "Ladino";
+    }
 }
