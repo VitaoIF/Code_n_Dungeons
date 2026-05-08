@@ -10,4 +10,9 @@ public class Guerreiro extends Classe {
     public int calcularAtaque(Personagem p){
         return p.rolarD20() + p.calcularModificador(p.getForca());
     }
+
+    @Override
+    public String toString(){
+        return "Guerreiro";
+    }
 }
