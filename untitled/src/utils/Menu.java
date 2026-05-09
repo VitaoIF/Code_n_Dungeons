@@ -21,15 +21,16 @@ public class Menu {
                         "Nome do personagem:"
         ));
 
-        int opcao = Integer.parseInt(JOptionPane.showInputDialog(
+        int escolhaClasse = Integer.parseInt(JOptionPane.showInputDialog(
                 "Informe sua classe: \n" +
                         "[ 1 ] Guerreiro\n" +
                         "[ 2 ] Ladino\n" +
                         "[ 3 ] Mago\n"
         ));
 
-        Classe classeEscolhida = Menu.verificarClasse(opcao);
+        Classe classeEscolhida = Menu.verificarClasse(escolhaClasse);
         player.setClasse(classeEscolhida);
+
 
         player.setNivel(Integer.parseInt(JOptionPane.showInputDialog("Informe o seu nível: ")));
         int[] total = Dados.pontosDeHabilidades();
@@ -51,13 +52,13 @@ public class Menu {
         );
     }
 
-    public static Classe verificarClasse(int opcao) {
+    public static Classe verificarClasse(int escolhaClasse) {
 
-        if (opcao == 1) {
+        if (escolhaClasse == 1) {
             return new Guerreiro();
-        } else if (opcao == 2) {
+        } else if (escolhaClasse == 2) {
             return new Ladino();
-        } else if (opcao == 3) {
+        } else if (escolhaClasse == 3) {
             return new Mago();
         }
 
