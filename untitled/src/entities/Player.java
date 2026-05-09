@@ -9,8 +9,8 @@ public class Player extends Personagem{
     public Player() {
     }
 
-    public Player(Integer carisma, Classe classe, Integer constituicao, Integer destreza, Integer forca, Integer inteligencia, Integer nivel, String nomePersonagem, String raca, Integer sabedoria, String nomeJogador) {
-        super(carisma, classe, constituicao, destreza, forca, inteligencia, nivel, nomePersonagem, raca, sabedoria);
+    public Player(Integer carisma, Classe classe, Integer constituicao, Integer destreza, Integer forca, Integer inteligencia, Integer nivel, String nomePersonagem, Integer sabedoria, String nomeJogador) {
+        super(carisma, classe, constituicao, destreza, forca, inteligencia, nivel, nomePersonagem, sabedoria);
         this.nomeJogador = nomeJogador;
     }
 
@@ -20,7 +20,6 @@ public class Player extends Personagem{
                 + "Nome Personagem: " + getNomePersonagem() + "\n"
                 + "Classe: " + getClasse() + "\n"
                 + "Nivel: " + getNivel() + "\n"
-                + "Raça: " + getRaca() + "\n"
                 + "Nome Jogador: " + this.nomeJogador + "\n"
                 +"\n-= INFORMAÇÕES DOS ATRIBUTOS =- \n"
                 + "Força: "+ getForca() + "\n"
