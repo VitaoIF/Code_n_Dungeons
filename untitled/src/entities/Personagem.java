@@ -8,7 +8,6 @@ public abstract class Personagem {
     private String nomePersonagem;
     private Classe classe;
     private int nivel;
-    private String raca;
 
     // Habilidades do personagem
     private int forca, destreza,constituicao, inteligencia, sabedoria, carisma;
@@ -22,7 +21,7 @@ public abstract class Personagem {
     public Personagem() {
     }
 
-    public Personagem(int carisma, Classe classe, int constituicao, int destreza, int forca, int inteligencia, int nivel, String nomePersonagem, String raca, int sabedoria) {
+    public Personagem(int carisma, Classe classe, int constituicao, int destreza, int forca, int inteligencia, int nivel, String nomePersonagem, int sabedoria) {
         this.carisma = carisma;
         this.classe = classe;
         this.constituicao = constituicao;
@@ -31,7 +30,6 @@ public abstract class Personagem {
         this.inteligencia = inteligencia;
         this.nivel = nivel;
         this.nomePersonagem = nomePersonagem;
-        this.raca = raca;
         this.sabedoria = sabedoria;
     }
 
@@ -105,13 +103,6 @@ public abstract class Personagem {
         this.nomePersonagem = nomePersonagem;
     }
 
-    public String getRaca() {
-        return raca;
-    }
-
-    public void setRaca(String raca) {
-        this.raca = raca;
-    }
 
     public int getSabedoria() {
         return sabedoria;
