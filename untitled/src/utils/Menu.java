@@ -25,7 +25,7 @@ public class Menu {
                 "Informe sua classe: \n" +
                         "[ 1 ] Guerreiro\n" +
                         "[ 2 ] Ladino\n" +
-                        "[ 3 ] Esqueci de fazer o mago\n"
+                        "[ 3 ] Mago\n"
         ));
 
         Classe classeEscolhida = Menu.verificarClasse(opcao);
@@ -55,9 +55,10 @@ public class Menu {
 
         if (opcao == 1) {
             return new Guerreiro();
-
         } else if (opcao == 2) {
             return new Ladino();
+        } else if (opcao == 3) {
+            return new Mago();
         }
 
         return null;
