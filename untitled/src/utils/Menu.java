@@ -3,7 +3,10 @@ package utils;
 import entities.*;
 
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 
 public class Menu {
@@ -32,7 +35,7 @@ public class Menu {
         player.setClasse(classeEscolhida);
 
 
-        player.setNivel(Integer.parseInt(JOptionPane.showInputDialog("Informe o seu nível: ")));
+        player.setNivel(1);
         int[] total = Dados.pontosDeHabilidades();
         distribuirPontos(total, player);
 
@@ -50,6 +53,52 @@ public class Menu {
                         "\nSabedoria: " + player.getSabedoria() +
                         "\nCarisma: " + player.getSabedoria()
         );
+
+        criacaoDeInimigo();
+    }
+
+    public static void criacaoDeInimigo(){
+        Personagem inimigo = new Inimigo();
+        ArrayList<String> nomes = new ArrayList<>(List.of("Dragon born", "Liu Kang", "Catarina Killer", "Pikachu", "BiruLeibe"));
+
+        Random random = new Random();
+        int nomeEscolhido = random.nextInt(0, nomes.size());
+        inimigo.setNomePersonagem(nomes.get(nomeEscolhido));
+        inimigo.setNivel(1);
+
+        //Definindo classe
+        int classeEscolhida = random.nextInt(1, 4);
+        System.out.println(classeEscolhida);
+        if (classeEscolhida == 1) {
+            inimigo.setClasse(new Guerreiro());
+        } else if (classeEscolhida == 2){
+            inimigo.setClasse(new Ladino());
+        } else if (classeEscolhida == 3){
+            inimigo.setClasse(new Mago());
+        }
+
+        //Definindo Habilidades
+        int[] total = Dados.pontosDeHabilidades();
+
+        inimigo.setForca(total[0]);
+        inimigo.setDestreza(total[1]);
+        inimigo.setConstituicao(total[2]);
+        inimigo.setInteligencia(total[3]);
+        inimigo.setSabedoria(total[4]);
+        inimigo.setCarisma(total[5]);
+
+        //Apresentação do vilão
+        JOptionPane.showMessageDialog(null, "-= Cabeçalho do Vilão =-" +
+                "\nNome: " + inimigo.getNomePersonagem() +
+                "\nClasse: " + inimigo.getClasse() +
+                "\nNível: " + inimigo.getNivel() +
+                "\n-= Habilidades do Vilão =-" +
+                "\nForça: " + inimigo.getForca() +
+                "\nDestreza: " + inimigo.getDestreza() +
+                "\nConstituição: " + inimigo.getConstituicao() +
+                "\nInteligência: " + inimigo.getInteligencia() +
+                "\nSabedoria: " + inimigo.getSabedoria() +
+                "\nCarisma: " +  inimigo.getCarisma());
     }
 
     public static Classe verificarClasse(int escolhaClasse) {
